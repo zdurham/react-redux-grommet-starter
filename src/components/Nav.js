@@ -1,22 +1,28 @@
 import React from 'react';
-import { Menu, Heading } from 'grommet';
+import { Menu, Heading, Button, Icons, Anchor, RoutedAnchor, Box } from 'grommet';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom'
 
-const NavBar = styled.div`
+const NavBar = styled(Box)`
   width: 100%;
   height: 60px;
   position: fixed;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+`
+
+const StyledNavLink = styled(NavLink)`
+  padding: 10px;
+  text-decoration: none;
 `
 
 function Nav() {
   return(
-    <NavBar>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/second-page">Second Page</NavLink>
+    <NavBar direction="row" background="brand" align="center">
+      <StyledNavLink to="/">
+        <Anchor label="Home" />
+      </StyledNavLink>
+      <StyledNavLink to="/second-page">
+        <Anchor label="Second Page" />
+      </StyledNavLink>
     </NavBar>
   )
 }
